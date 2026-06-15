@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Arooj Design</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="nav-logo">AROOJ <span>DESIGN</span></div>
+    <ul class="nav-links">
+      <li><a href="#daily-new-in">Daily New In</a></li>
+      <li><a href="#collections" onclick="switchTab('festive')">Unstitched</a></li>
+      <li><a href="#collections" onclick="switchTab('summer')">Ready to Wear</a></li>
+      <li><a href="#collections">Collections</a></li>
+      <li><a href="#collections" onclick="switchTab('bridal')">Bridal</a></li>
+      <li><a href="#footer">Accessories</a></li>
+    </ul>
+    <div class="nav-icons">
+      <span>&#128269;</span>
+      <span>&#128100;</span>
+      <span>&#128722;</span>
+    </div>
+  </nav>
+
+  <!-- HERO BANNER -->
+  <section class="hero">
+    <div class="hero-left">
+      <p class="hero-label">NEW COLLECTION</p>
+      <h1 class="hero-title">
+        <span class="anim-word">AROOJ'S</span><br/>
+        <span class="anim-word delay1">DESIGN'S</span>
+      </h1>
+      <p class="hero-desc">Discover timeless pieces crafted for comfort,<br/>designed for elegance, made for you.</p>
+      <div class="hero-btns">
+        <a href="#" class="hero-btn-dark">Shop Now &rarr;</a>
+        <a href="#" class="hero-btn-outline">&#9654; Watch Lookbook</a>
+      </div>
+      <div class="hero-features">
+        <div class="feature-item">
+          <span class="feat-icon">&#128666;</span>
+          <div>
+            <strong>Free Shipping</strong>
+            <p>On orders over Rs.5000</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <span class="feat-icon">&#128257;</span>
+          <div>
+            <strong>Easy Returns</strong>
+            <p>30-day returns</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <span class="feat-icon">&#128274;</span>
+          <div>
+            <strong>Secure Payment</strong>
+            <p>100% protected</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-right">
+      <img src="hero-model.jpg" alt="Arooj Design Model"/>
+    </div>
+  </section>
+
+  <!-- MOST IN DEMAND -->
+  <section class="most-in-demand">
+    <div class="mid-left">
+      <h2>MOST IN<br/>DEMAND</h2>
+      <p>Quality you can feel in designs you'll love every day. The perfect balance of modern elegance and effortless style.</p>
+    </div>
+    <div class="mid-grid">
+      <div class="mid-img"><img src="demand1.jpg" alt="Collection 1"/></div>
+      <div class="mid-img"><img src="demand2.jpg" alt="Collection 2"/></div>
+      <div class="mid-img"><img src="demand3.jpg" alt="Collection 3"/></div>
+      <div class="mid-img"><img src="demand4.jpg" alt="Collection 4"/></div>
+    </div>
+  </section>
+
+  <!-- DAILY NEW IN -->
+  <section class="daily-new" id="daily-new-in">
+    <div class="section-header">
+      <h2>DAILY NEW IN</h2>
+      <p>Explore new designs daily with premium fabrics and luxury embroidery by Arooj Design.</p>
+    </div>
+    <div class="products-grid">
+      <div class="product-card">
+        <div class="badge">Raw Silk</div>
+        <div class="product-img"><img src="fashion1.jpg" alt="Raw Silk"/></div>
+        <p class="product-name">Embroidered Raw Silk 3 Pcs</p>
+        <p class="product-price">Rs. 12,500</p>
+        <button class="add-btn">Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <div class="badge">Chiffon</div>
+        <div class="product-img"><img src="fashion2.jpg" alt="Chiffon"/></div>
+        <p class="product-name">Embroidered Chiffon Unstitched</p>
+        <p class="product-price">Rs. 9,800</p>
+        <button class="add-btn">Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <div class="badge">Boski Silk</div>
+        <div class="product-img"><img src="fashion3.png" alt="Boski Silk"/></div>
+        <p class="product-name">Luxury Boski Silk Collection</p>
+        <p class="product-price">Rs. 15,200</p>
+        <button class="add-btn">Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <div class="badge">Paper Cotton</div>
+        <div class="product-img"><img src="fashion4.jpg" alt="Paper Cotton"/></div>
+        <p class="product-name">Paper Cotton Summer Suit</p>
+        <p class="product-price">Rs. 7,500</p>
+        <button class="add-btn">Add to Cart</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- BEST SELLERS BANNER -->
+  <section class="best-sellers">
+    <div class="bs-overlay">
+      <div class="bs-box">
+        <h1>BEST<br/><span>SELLERS</span></h1>
+        <p><em>Loved by Many</em></p>
+        <a href="#" class="hero-btn">SHOP NOW</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SHOP BY COLLECTIONS -->
+  <section class="collections" id="collections">
+    <h2>SHOP BY COLLECTIONS</h2>
+    <div class="col-tabs">
+      <button class="tab active" onclick="showTab('festive')">FESTIVE EDIT</button>
+      <span>/</span>
+      <button class="tab" onclick="showTab('bridal')">BRIDAL EDIT</button>
+      <span>/</span>
+      <button class="tab" onclick="showTab('summer')">SUMMER EDIT</button>
+      <span>/</span>
+      <button class="tab" onclick="showTab('casual')">CASUAL PRET</button>
+    </div>
+
+    <div id="festive" class="tab-content active">
+      <div class="products-grid">
+        <div class="product-card">
+          <div class="badge green">Boski Silk</div>
+          <div class="product-img"><img src="col1.jpg" alt="Festive Embroidered Boski"/></div>
+          <p class="product-name">Festive Embroidered Boski 3 Pcs</p>
+          <p class="product-price">Rs. 18,999</p>
+          <button class="add-btn">Add to Cart</button>
+        </div>
+        <div class="product-card">
+          <div class="badge green">Chiffon</div>
+          <div class="product-img"><img src="col2.jpg" alt="Luxury Chiffon Festive Suit"/></div>
+          <p class="product-name">Luxury Chiffon Festive Suit</p>
+          <p class="product-price">Rs. 14,500</p>
+          <button class="add-btn">Add to Cart</button>
+        </div>
+        <div class="product-card">
+          <div class="badge green">Net</div>
+          <div class="product-img"><img src="col3.jpg" alt="Embroidered Net Festive"/></div>
+          <p class="product-name">Embroidered Net Festive 3 Pcs</p>
+          <p class="product-price">Rs. 22,000</p>
+          <button class="add-btn">Add to Cart</button>
+        </div>
+        <div class="product-card">
+          <div class="badge green">Raw Silk</div>
+          <div class="product-img"><img src="col4.jpg" alt="Raw Silk Festive Collection"/></div>
+          <p class="product-name">Raw Silk Festive Collection</p>
+          <p class="product-price">Rs. 16,800</p>
+          <button class="add-btn">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="bridal" class="tab-content">
+      <div class="products-grid">
+        <div class="product-card">
+          <div class="badge green">Heavy Embroidery</div>
+          <div class="product-img"><img src="bri1.jpg" alt="Bridal Lehenga"/></div>
+          <p class="product-name">Bridal Lehenga Premium</p>
+          <p class="product-price">Rs. 85,000</p>
+          <button class="add-btn">Add to Cart</button>
+        </div>
+        <div class="product-card">
+          <div class="badge green">Velvet</div>
+          <div class="product-img"><img src="bri2.jpg" alt="Velvet Bridal Suit"/></div>
+          <p class="product-name">Velvet Bridal Suit</p>
+          <p class="product-price">Rs. 65,000</p>
+          <button class="add-btn">Add to Cart</button>
+        </div>
+        <div class="product-card">
+          <div class="badge green">Organza</div>
+          <div class="product-img"><img src="bri3.jpg" alt="Organza Bridal"/></div>
+          <p class="product-name">Organza Bridal Dupatta Set</p>
+          <p class="product-price">Rs. 72,000</p>
+          <button class="add-btn">Add to Cart</button>
+        </div>
+        <div class="product-card">
+          <div class="badge green">Jamawar</div>
+          <div class="product-img"><img src="bri4.jpg" alt="Jamawar Bridal"/></div>
+          <p class="product-name">Jamawar Bridal Collection</p>
+          <p class="product-price">Rs. 58,000</p>
+          <button class="add-btn">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="summer" class="tab-content">
+      <div class="products-grid">
+        <div class="product-card">
+          <div class="badge green">Lawn</div>
+          <div class="product-img"><img src="sum1.jpg" alt="Summer Lawn"/></div>
+          <p class="product-name">Summer Lawn 3 Pcs</p>
+          <p class="product-price">Rs. 5,500</p>
+          <button class="add-btn">Add to Cart</button>
+        </div>
+        <div class="product-card">
+          <div class="badge green">Cambric</div>
+          <div class="product-img"><img src="sum2.jpg" alt="Cambric Summer"/></div>
+          <p class="product-name">Cambric Summer Edit</p>
+          <p class="product-price">Rs. 4,800</p>
+          <button class="add-btn">Add to Cart</button>
+        </div>
+        <div class="product-card">
+          <div class="badge green">Voile</div>
+          <div class="product-img"><img src="sum3.jpg" alt="Voile Printed"/></div>
+          <p class="product-name">Voile Printed Summer</p>
+          <p class="product-price">Rs. 3,999</p>
+          <button class="add-btn">Add to Cart</button>
+        </div>
+        <div class="product-card">
+          <div class="badge green">Cotton</div>
+          <div class="product-img"><img src="sum4.jpg" alt="Cotton Summer"/></div>
+          <p class="product-name">Cotton Pret Summer Suit</p>
+          <p class="product-price">Rs. 6,200</p>
+          <button class="add-btn">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="casual" class="tab-content">
+      <div class="products-grid">
+        <div class="product-card">
+          <div class="badge green">Khaddar</div>
+          <div class="product-img"><img src="cas1.jpg" alt="Casual Khaddar"/></div>
+          <p class="product-name">Casual Khaddar 2 Pcs</p>
+          <p class="product-price">Rs. 4,200</p>
+          <button class="add-btn">Add to Cart</button>
+        </div>
+        <div class="product-card">
+          <div class="badge green">Linen</div>
+          <div class="product-img"><img src="cas2.jpg" alt="Linen Casual"/></div>
+          <p class="product-name">Linen Casual Pret</p>
+          <p class="product-price">Rs. 3,800</p>
+          <button class="add-btn">Add to Cart</button>
+        </div>
+        <div class="product-card">
+          <div class="badge green">Cotton</div>
+          <div class="product-img"><img src="cas3.jpg" alt="Cotton Casual"/></div>
+          <p class="product-name">Cotton Casual Everyday</p>
+          <p class="product-price">Rs. 3,200</p>
+          <button class="add-btn">Add to Cart</button>
+        </div>
+        <div class="product-card">
+          <div class="badge green">Jersey</div>
+          <div class="product-img"><img src="cas4.jpg" alt="Jersey Casual"/></div>
+          <p class="product-name">Jersey Casual Co-ord Set</p>
+          <p class="product-price">Rs. 5,500</p>
+          <button class="add-btn">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CART SIDEBAR -->
+  <div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
+  <div class="cart-sidebar" id="cartSidebar">
+    <div class="cart-header">
+      <h3>YOUR CART</h3>
+      <button class="cart-close" onclick="closeCart()">&times;</button>
+    </div>
+    <div class="cart-items" id="cartItems">
+      <p class="cart-empty">Your cart is empty.</p>
+    </div>
+    <div class="cart-footer" id="cartFooter" style="display:none">
+      <div class="cart-total">
+        <span>Total:</span>
+        <span id="cartTotal">Rs. 0</span>
+      </div>
+      <a href="#" class="hero-btn-dark" style="display:block;text-align:center;margin-top:16px;">CHECKOUT</a>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer" id="footer">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <h3>AROOJ <span>DESIGN</span></h3>
+        <p>Luxury Pakistani Fashion</p>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#">New Arrivals</a></li>
+          <li><a href="#">Collections</a></li>
+          <li><a href="#">Bridal</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <p>Email: info@aroojdesign.com</p>
+        <p>Phone: +92 300 0000000</p>
+        <p>Lahore, Pakistan</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Arooj Design. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
