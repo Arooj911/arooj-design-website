@@ -712,6 +712,12 @@ body {
   border: 1px dashed #ddd;
 }
 
+/* ===== ACCESSORIES ===== */
+.accessories-section {
+  padding: 80px 60px;
+  background: #faf8f5;
+}
+
 /* ===== FOOTER ===== */
 .footer {
   background: #1a1a1a;
