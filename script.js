@@ -112,23 +112,46 @@ document.addEventListener('DOMContentLoaded', () => {
   // Cart icon in navbar opens cart
   document.querySelectorAll('.nav-icons span')[2]?.addEventListener('click', openCart);
 
-  // Contact form submission
+  // Contact form submission via Web3Forms
   const contactForm = document.querySelector('.contact-form');
   if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
+    contactForm.addEventListener('submit', async function(e) {
       e.preventDefault();
-      const toast = document.createElement('div');
-      toast.textContent = '✓ Message sent! We will get back to you soon.';
-      toast.style.cssText = `
-        position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%);
-        background: #b8860b; color: #fff; padding: 16px 32px;
-        font-family: 'Montserrat', sans-serif; font-size: 14px; letter-spacing: 1px;
-        border-radius: 4px; z-index: 9999; box-shadow: 0 4px 20px rgba(0,0,0,0.2);
-        animation: fadeIn 0.3s ease;
-      `;
-      document.body.appendChild(toast);
-      contactForm.reset();
-      setTimeout(() => toast.remove(), 4000);
+      const btn = contactForm.querySelector('button[type="submit"]');
+      btn.textContent = 'SENDING...';
+      btn.disabled = true;
+
+      const formData = new FormData(contactForm);
+      try {
+        const res = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          body: formData
+        });
+        const data = await res.json();
+        if (data.success) {
+          showToast('✓ Message sent! We will get back to you soon.');
+          contactForm.reset();
+        } else {
+          showToast('Something went wrong. Please try again.');
+        }
+      } catch {
+        showToast('Something went wrong. Please try again.');
+      }
+      btn.textContent = 'SEND MESSAGE';
+      btn.disabled = false;
     });
+  }
+
+  function showToast(msg) {
+    const toast = document.createElement('div');
+    toast.textContent = msg;
+    toast.style.cssText = `
+      position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%);
+      background: #b8860b; color: #fff; padding: 16px 32px;
+      font-family: 'Montserrat', sans-serif; font-size: 14px; letter-spacing: 1px;
+      border-radius: 4px; z-index: 9999; box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    `;
+    document.body.appendChild(toast);
+    setTimeout(() => toast.remove(), 4000);
   }
 });
