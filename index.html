@@ -21,11 +21,28 @@
       <li><a href="#accessories">Accessories</a></li>
     </ul>
     <div class="nav-icons">
-      <span>&#128269;</span>
-      <span>&#128100;</span>
-      <span>&#128722;</span>
+      <span id="searchBtn" onclick="openSearch()">&#128269;</span>
+      <span id="profileBtn" onclick="toggleProfile()">&#128100;</span>
+      <span id="cartBtn">&#128722;</span>
+    </div>
+    <!-- Profile Dropdown -->
+    <div class="profile-dropdown" id="profileDropdown">
+      <a href="#daily-new-in" onclick="closeProfile()">New Arrivals</a>
+      <a href="#collections" onclick="closeProfile()">Collections</a>
+      <a href="#accessories" onclick="closeProfile()">Accessories</a>
+      <a href="#contact" onclick="closeProfile()">Contact Us</a>
     </div>
   </nav>
+
+  <!-- Search Overlay -->
+  <div class="search-overlay" id="searchOverlay">
+    <div class="search-box">
+      <input type="text" id="searchInput" placeholder="Search products..." oninput="searchProducts()"/>
+      <button class="search-close" onclick="closeSearch()">&#10005;</button>
+    </div>
+    <div class="search-results" id="searchResults"></div>
+  </div>
+  <div class="search-backdrop" id="searchBackdrop" onclick="closeSearch()"></div>
 
   <!-- HERO BANNER -->
   <section class="hero">

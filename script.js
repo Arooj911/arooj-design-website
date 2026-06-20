@@ -19,6 +19,65 @@ function switchTab(tabName) {
   });
 }
 
+// Search
+function openSearch() {
+  document.getElementById('searchOverlay').classList.add('open');
+  document.getElementById('searchBackdrop').classList.add('active');
+  document.getElementById('searchInput').focus();
+  document.getElementById('searchResults').innerHTML = '';
+}
+
+function closeSearch() {
+  document.getElementById('searchOverlay').classList.remove('open');
+  document.getElementById('searchBackdrop').classList.remove('active');
+  document.getElementById('searchInput').value = '';
+  document.getElementById('searchResults').innerHTML = '';
+}
+
+function searchProducts() {
+  const query = document.getElementById('searchInput').value.toLowerCase().trim();
+  const resultsEl = document.getElementById('searchResults');
+  if (!query) { resultsEl.innerHTML = ''; return; }
+
+  const cards = document.querySelectorAll('.product-card');
+  const matches = [];
+  cards.forEach(card => {
+    const name = card.querySelector('.product-name')?.textContent || '';
+    if (name.toLowerCase().includes(query)) {
+      const img = card.querySelector('.product-img img')?.src || '';
+      matches.push({ name, img });
+    }
+  });
+
+  if (matches.length === 0) {
+    resultsEl.innerHTML = '<p class="search-empty">No products found.</p>';
+  } else {
+    resultsEl.innerHTML = matches.map(m => `
+      <div class="search-result-item" onclick="closeSearch()">
+        ${m.img ? `<img src="${m.img}" alt="${m.name}"/>` : ''}
+        <span>${m.name}</span>
+      </div>`).join('');
+  }
+}
+
+// Profile dropdown
+function toggleProfile() {
+  const dd = document.getElementById('profileDropdown');
+  dd.classList.toggle('open');
+}
+
+function closeProfile() {
+  document.getElementById('profileDropdown').classList.remove('open');
+}
+
+document.addEventListener('click', function(e) {
+  const dd = document.getElementById('profileDropdown');
+  const btn = document.getElementById('profileBtn');
+  if (dd && !dd.contains(e.target) && e.target !== btn) {
+    dd.classList.remove('open');
+  }
+});
+
 // Cart
 let cart = [];
 
@@ -110,7 +169,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // Cart icon in navbar opens cart
-  document.querySelectorAll('.nav-icons span')[2]?.addEventListener('click', openCart);
+  document.getElementById('cartBtn')?.addEventListener('click', openCart);
 
   // Contact form submission via Web3Forms
   const contactForm = document.querySelector('.contact-form');
