@@ -34,30 +34,44 @@ function closeSearch() {
   document.getElementById('searchResults').innerHTML = '';
 }
 
+let searchMatchedCards = [];
+
 function searchProducts() {
   const query = document.getElementById('searchInput').value.toLowerCase().trim();
   const resultsEl = document.getElementById('searchResults');
-  if (!query) { resultsEl.innerHTML = ''; return; }
+  if (!query) { resultsEl.innerHTML = ''; searchMatchedCards = []; return; }
 
   const cards = document.querySelectorAll('.product-card');
-  const matches = [];
+  searchMatchedCards = [];
   cards.forEach(card => {
     const name = card.querySelector('.product-name')?.textContent || '';
     if (name.toLowerCase().includes(query)) {
       const img = card.querySelector('.product-img img')?.src || '';
-      matches.push({ name, img });
+      searchMatchedCards.push({ name, img, card });
     }
   });
 
-  if (matches.length === 0) {
+  if (searchMatchedCards.length === 0) {
     resultsEl.innerHTML = '<p class="search-empty">No products found.</p>';
   } else {
-    resultsEl.innerHTML = matches.map(m => `
-      <div class="search-result-item" onclick="closeSearch()">
+    resultsEl.innerHTML = searchMatchedCards.map((m, i) => `
+      <div class="search-result-item" onclick="goToProduct(${i})">
         ${m.img ? `<img src="${m.img}" alt="${m.name}"/>` : ''}
         <span>${m.name}</span>
       </div>`).join('');
   }
+}
+
+function goToProduct(index) {
+  const match = searchMatchedCards[index];
+  if (!match) return;
+  closeSearch();
+  setTimeout(() => {
+    match.card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    match.card.style.outline = '2px solid #b8860b';
+    match.card.style.transition = 'outline 0.3s';
+    setTimeout(() => { match.card.style.outline = 'none'; }, 2000);
+  }, 350);
 }
 
 // Profile dropdown
