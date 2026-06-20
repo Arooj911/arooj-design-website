@@ -130,6 +130,17 @@ function changeQty(name, delta) {
   }
 }
 
+function checkoutWhatsApp() {
+  if (cart.length === 0) return;
+  let msg = 'Hello! I would like to place an order:%0A%0A';
+  cart.forEach(item => {
+    msg += `• ${item.name} x${item.qty} — Rs. ${(item.price * item.qty).toLocaleString()}%0A`;
+  });
+  const total = cart.reduce((sum, item) => sum + item.price * item.qty, 0);
+  msg += `%0ATotal: Rs. ${total.toLocaleString()}`;
+  window.open(`https://wa.me/923000000000?text=${msg}`, '_blank');
+}
+
 function renderCart() {
   const container = document.getElementById('cartItems');
   const footer = document.getElementById('cartFooter');
