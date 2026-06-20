@@ -1146,35 +1146,25 @@ body {
   .hamburger { display: flex; }
   .profile-dropdown { right: 16px; top: 58px; }
 
-  /* Hero — same split layout, properly sized */
+  /* Hero — same split layout, properly sized for mobile */
   .hero {
-    min-height: auto;
-    height: 420px;
+    min-height: 0 !important;
+    height: 340px !important;
   }
   .hero-left {
-    flex: 1;
-    padding: 24px 16px 20px 20px;
-    justify-content: center;
+    padding: 20px 10px 16px 16px !important;
   }
-  .hero-right {
-    flex: 1;
-  }
-  .hero-right img {
-    height: 420px;
-    object-fit: cover;
-    object-position: top;
-  }
-  .hero-label { font-size: 8px; letter-spacing: 2px; margin-bottom: 8px; }
-  .hero-title { font-size: 28px; line-height: 1.1; margin-bottom: 8px; }
-  .hero-desc { font-size: 10px; margin-bottom: 14px; line-height: 1.5; }
-  .hero-btn-dark { padding: 9px 14px; font-size: 9px; letter-spacing: 1px; }
-  .hero-btn-outline { font-size: 9px; }
-  .hero-btns { gap: 10px; flex-wrap: wrap; }
-  .hero-features { gap: 8px; margin-top: 14px; }
-  .feature-item { gap: 6px; }
-  .feature-item strong { font-size: 9px; }
-  .feature-item p { font-size: 8px; }
-  .feat-icon { font-size: 16px; }
+  .hero-label { font-size: 7px !important; letter-spacing: 2px; margin-bottom: 6px; }
+  .hero-title { font-size: 22px !important; line-height: 1.1; margin-bottom: 8px; }
+  .hero-desc { font-size: 9px !important; margin-bottom: 10px; line-height: 1.5; }
+  .hero-btn-dark { padding: 8px 12px !important; font-size: 8px !important; letter-spacing: 1px; }
+  .hero-btn-outline { font-size: 8px !important; }
+  .hero-btns { gap: 8px; margin-bottom: 12px; flex-wrap: wrap; }
+  .hero-features { gap: 6px; margin-top: 10px; padding-top: 10px; }
+  .feature-item { gap: 4px; }
+  .feature-item strong { font-size: 8px !important; }
+  .feature-item p { font-size: 7px !important; }
+  .feat-icon { font-size: 14px !important; }
 
   /* Sections */
   .daily-new-in, .collections-section,
