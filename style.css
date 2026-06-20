@@ -1146,18 +1146,35 @@ body {
   .hamburger { display: flex; }
   .profile-dropdown { right: 16px; top: 58px; }
 
-  /* Hero — same split layout, just smaller */
-  .hero { min-height: 60vw; }
-  .hero-left { padding: 30px 20px 30px 24px; }
-  .hero-title { font-size: 32px; line-height: 1.1; }
-  .hero-label { font-size: 9px; margin-bottom: 10px; }
-  .hero-desc { font-size: 11px; margin-bottom: 16px; }
-  .hero-btn-dark { padding: 10px 18px; font-size: 10px; }
-  .hero-btn-outline { font-size: 10px; }
-  .hero-features { gap: 10px; margin-top: 16px; }
-  .feature-item strong { font-size: 10px; }
-  .feature-item p { font-size: 9px; }
-  .feat-icon { font-size: 18px; }
+  /* Hero — same split layout, properly sized */
+  .hero {
+    min-height: auto;
+    height: 420px;
+  }
+  .hero-left {
+    flex: 1;
+    padding: 24px 16px 20px 20px;
+    justify-content: center;
+  }
+  .hero-right {
+    flex: 1;
+  }
+  .hero-right img {
+    height: 420px;
+    object-fit: cover;
+    object-position: top;
+  }
+  .hero-label { font-size: 8px; letter-spacing: 2px; margin-bottom: 8px; }
+  .hero-title { font-size: 28px; line-height: 1.1; margin-bottom: 8px; }
+  .hero-desc { font-size: 10px; margin-bottom: 14px; line-height: 1.5; }
+  .hero-btn-dark { padding: 9px 14px; font-size: 9px; letter-spacing: 1px; }
+  .hero-btn-outline { font-size: 9px; }
+  .hero-btns { gap: 10px; flex-wrap: wrap; }
+  .hero-features { gap: 8px; margin-top: 14px; }
+  .feature-item { gap: 6px; }
+  .feature-item strong { font-size: 9px; }
+  .feature-item p { font-size: 8px; }
+  .feat-icon { font-size: 16px; }
 
   /* Sections */
   .daily-new-in, .collections-section,
