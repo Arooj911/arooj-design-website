@@ -44,6 +44,21 @@
   </div>
   <div class="search-backdrop" id="searchBackdrop" onclick="closeSearch()"></div>
 
+  <!-- Product Modal -->
+  <div class="product-modal-overlay" id="productModalOverlay" onclick="closeProductModal()"></div>
+  <div class="product-modal" id="productModal">
+    <button class="product-modal-close" onclick="closeProductModal()">&#10005;</button>
+    <div class="product-modal-img-wrap">
+      <img id="productModalImg" src="" alt=""/>
+    </div>
+    <div class="product-modal-info">
+      <p class="product-modal-badge" id="productModalBadge"></p>
+      <h2 class="product-modal-name" id="productModalName"></h2>
+      <p class="product-modal-price" id="productModalPrice"></p>
+      <button class="product-modal-btn" id="productModalBtn">Add to Cart</button>
+    </div>
+  </div>
+
   <!-- HERO BANNER -->
   <section class="hero">
     <div class="hero-left">
