@@ -19,6 +19,24 @@ function switchTab(tabName) {
   });
 }
 
+// Policy toast for feature items
+function showPolicyToast(msg) {
+  const existing = document.querySelector('.policy-toast');
+  if (existing) existing.remove();
+  const toast = document.createElement('div');
+  toast.className = 'policy-toast';
+  toast.textContent = msg;
+  toast.style.cssText = `
+    position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%);
+    background: #1a1a1a; color: #fff; padding: 14px 28px;
+    font-family: 'Montserrat', sans-serif; font-size: 13px; letter-spacing: 0.5px;
+    border-radius: 4px; z-index: 9999; box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    max-width: 90vw; text-align: center;
+  `;
+  document.body.appendChild(toast);
+  setTimeout(() => toast.remove(), 3500);
+}
+
 // Product Modal
 function openProductModal(imgSrc, name, price, badge) {
   document.getElementById('productModalImg').src = imgSrc;
