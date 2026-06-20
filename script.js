@@ -19,6 +19,16 @@ function switchTab(tabName) {
   });
 }
 
+// Mobile menu
+function openMobileMenu() {
+  document.getElementById('mobileMenu').classList.add('open');
+  document.getElementById('mobileOverlay').classList.add('active');
+}
+function closeMobileMenu() {
+  document.getElementById('mobileMenu').classList.remove('open');
+  document.getElementById('mobileOverlay').classList.remove('active');
+}
+
 // Policy toast for feature items
 function showPolicyToast(msg) {
   const existing = document.querySelector('.policy-toast');

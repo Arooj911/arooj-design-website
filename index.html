@@ -25,6 +25,9 @@
       <span id="profileBtn" onclick="toggleProfile()">&#128100;</span>
       <span id="cartBtn">&#128722;</span>
     </div>
+    <div class="hamburger" onclick="openMobileMenu()">
+      <span></span><span></span><span></span>
+    </div>
     <!-- Profile Dropdown -->
     <div class="profile-dropdown" id="profileDropdown">
       <a href="#daily-new-in" onclick="closeProfile()">New Arrivals</a>
@@ -43,6 +46,19 @@
     <div class="search-results" id="searchResults"></div>
   </div>
   <div class="search-backdrop" id="searchBackdrop" onclick="closeSearch()"></div>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-overlay" id="mobileOverlay" onclick="closeMobileMenu()"></div>
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="mobile-menu-close" onclick="closeMobileMenu()">&#10005;</button>
+    <a href="#daily-new-in" onclick="closeMobileMenu()">Daily New In</a>
+    <a href="#collections" onclick="closeMobileMenu(); switchTab('festive')">Unstitched</a>
+    <a href="#collections" onclick="closeMobileMenu(); switchTab('summer')">Ready to Wear</a>
+    <a href="#collections" onclick="closeMobileMenu()">Collections</a>
+    <a href="#collections" onclick="closeMobileMenu(); switchTab('bridal')">Bridal</a>
+    <a href="#accessories" onclick="closeMobileMenu()">Accessories</a>
+    <a href="#contact" onclick="closeMobileMenu()">Contact Us</a>
+  </div>
 
   <!-- Product Modal -->
   <div class="product-modal-overlay" id="productModalOverlay" onclick="closeProductModal()"></div>
