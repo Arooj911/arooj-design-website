@@ -1146,25 +1146,39 @@ body {
   .hamburger { display: flex; }
   .profile-dropdown { right: 16px; top: 58px; }
 
-  /* Hero — same split layout, properly sized for mobile */
+  /* Hero — image full width on top, text below */
   .hero {
+    flex-direction: column !important;
     min-height: 0 !important;
-    height: 340px !important;
+    height: auto !important;
+  }
+  .hero-right {
+    width: 100% !important;
+    height: 420px !important;
+    order: 1;
+    flex: none !important;
+  }
+  .hero-right img {
+    width: 100% !important;
+    height: 420px !important;
+    object-fit: cover;
+    object-position: top center;
   }
   .hero-left {
-    padding: 20px 10px 16px 16px !important;
+    width: 100% !important;
+    flex: none !important;
+    order: 2;
+    padding: 30px 20px !important;
   }
-  .hero-label { font-size: 7px !important; letter-spacing: 2px; margin-bottom: 6px; }
-  .hero-title { font-size: 22px !important; line-height: 1.1; margin-bottom: 8px; }
-  .hero-desc { font-size: 9px !important; margin-bottom: 10px; line-height: 1.5; }
-  .hero-btn-dark { padding: 8px 12px !important; font-size: 8px !important; letter-spacing: 1px; }
-  .hero-btn-outline { font-size: 8px !important; }
-  .hero-btns { gap: 8px; margin-bottom: 12px; flex-wrap: wrap; }
-  .hero-features { gap: 6px; margin-top: 10px; padding-top: 10px; }
-  .feature-item { gap: 4px; }
-  .feature-item strong { font-size: 8px !important; }
-  .feature-item p { font-size: 7px !important; }
-  .feat-icon { font-size: 14px !important; }
+  .hero-title { font-size: 38px !important; margin-bottom: 12px; }
+  .hero-label { font-size: 10px !important; margin-bottom: 10px; }
+  .hero-desc { font-size: 13px !important; margin-bottom: 20px; }
+  .hero-btn-dark { padding: 12px 24px !important; font-size: 11px !important; }
+  .hero-btn-outline { font-size: 12px !important; }
+  .hero-btns { gap: 16px; margin-bottom: 24px; }
+  .hero-features { gap: 16px; margin-top: 20px; padding-top: 20px; flex-wrap: wrap; }
+  .feature-item strong { font-size: 11px !important; }
+  .feature-item p { font-size: 10px !important; }
 
   /* Sections */
   .daily-new-in, .collections-section,
