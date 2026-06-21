@@ -120,7 +120,9 @@ function searchProducts() {
     const name = card.querySelector('.product-name')?.textContent || '';
     if (name.toLowerCase().includes(query)) {
       const img = card.querySelector('.product-img img')?.src || '';
-      searchMatchedCards.push({ name, img, card });
+      const price = card.querySelector('.product-price')?.textContent || '';
+      const badge = card.querySelector('.badge')?.textContent || '';
+      searchMatchedCards.push({ name, img, price, badge, card });
     }
   });
 
@@ -140,11 +142,8 @@ function goToProduct(index) {
   if (!match) return;
   closeSearch();
   setTimeout(() => {
-    match.card.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    match.card.style.outline = '2px solid #b8860b';
-    match.card.style.transition = 'outline 0.3s';
-    setTimeout(() => { match.card.style.outline = 'none'; }, 2000);
-  }, 350);
+    openProductModal(match.img, match.name, match.price, match.badge);
+  }, 300);
 }
 
 // Profile dropdown
