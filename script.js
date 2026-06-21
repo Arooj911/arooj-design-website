@@ -255,7 +255,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Cart icon in navbar opens cart
   document.getElementById('cartBtn')?.addEventListener('click', openCart);
 
-  // Contact form submission via Web3Forms
+  // Contact form submission via FormSubmit
   const contactForm = document.querySelector('.contact-form');
   if (contactForm) {
     contactForm.addEventListener('submit', async function(e) {
@@ -266,12 +266,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const formData = new FormData(contactForm);
       try {
-        const res = await fetch('https://api.web3forms.com/submit', {
+        const res = await fetch('https://formsubmit.co/ajax/aroojclaude@gmail.com', {
           method: 'POST',
+          headers: { 'Accept': 'application/json' },
           body: formData
         });
         const data = await res.json();
-        if (data.success) {
+        if (data.success === 'true' || data.success === true) {
           showToast('✓ Message sent! We will get back to you soon.');
           contactForm.reset();
         } else {
