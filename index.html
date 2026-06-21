@@ -413,9 +413,8 @@
           </div>
         </div>
       </div>
-      <form class="contact-form">
-        <input type="hidden" name="_captcha" value="false"/>
-        <input type="hidden" name="_subject" value="New message from Arooj Design website!"/>
+      <form class="contact-form" name="contact" netlify data-netlify="true">
+        <input type="hidden" name="form-name" value="contact"/>
         <input type="text" name="name" placeholder="Your Name" required/>
         <input type="email" name="email" placeholder="Your Email" required/>
         <input type="text" name="subject" placeholder="Subject"/>
