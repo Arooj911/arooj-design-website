@@ -4,8 +4,68 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Arooj Design</title>
-  <link rel="stylesheet" href="style.css?v=6" />
+  <link rel="stylesheet" href="style.css?v=8" />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+  @media (max-width: 768px) {
+    /* NAVBAR */
+    .nav-links { display: none !important; }
+    .hamburger { display: flex !important; }
+    .navbar { padding: 14px 20px !important; }
+
+    /* HERO */
+    .hero { flex-direction: column !important; min-height: 0 !important; height: auto !important; }
+    .hero-right { width: 100% !important; height: 85vw !important; max-height: 400px !important; order: 1 !important; flex: none !important; }
+    .hero-right img { width: 100% !important; height: 100% !important; object-fit: cover !important; object-position: top center !important; display: block !important; }
+    .hero-left { width: 100% !important; flex: none !important; order: 2 !important; padding: 28px 20px 24px !important; text-align: center !important; align-items: center !important; }
+    .hero-title { font-size: 34px !important; }
+    .hero-label { font-size: 9px !important; }
+    .hero-desc { font-size: 12px !important; margin-bottom: 18px !important; }
+    .hero-btns { justify-content: center !important; flex-wrap: wrap !important; gap: 12px !important; }
+    .hero-features { flex-wrap: wrap !important; justify-content: center !important; gap: 14px !important; padding-top: 16px !important; margin-top: 4px !important; }
+
+    /* MOST IN DEMAND */
+    .most-in-demand { flex-direction: column !important; padding: 36px 16px !important; gap: 20px !important; }
+    .mid-left { min-width: unset !important; width: 100% !important; text-align: center !important; }
+    .mid-left h2 { font-size: 26px !important; }
+    .mid-left p { max-width: 100% !important; }
+    .mid-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 10px !important; width: 100% !important; }
+    .mid-img { height: 190px !important; }
+
+    /* SECTIONS */
+    .daily-new-in, .collections-section, .accessories-section, .contact-section { padding: 36px 16px !important; }
+    .section-header h2 { font-size: 20px !important; letter-spacing: 3px !important; }
+
+    /* PRODUCT GRIDS */
+    .products-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 12px !important; }
+    .demand-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 12px !important; }
+    .accessories-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 12px !important; }
+    .product-name { font-size: 11px !important; }
+    .product-price { font-size: 11px !important; }
+    .add-btn { font-size: 9px !important; padding: 9px 6px !important; }
+
+    /* COLLECTION TABS */
+    .tabs { overflow-x: auto !important; flex-wrap: nowrap !important; -webkit-overflow-scrolling: touch !important; }
+    .tabs::-webkit-scrollbar { display: none !important; }
+    .tab { white-space: nowrap !important; padding: 14px 18px !important; font-size: 12px !important; color: #333 !important; font-weight: 700 !important; flex-shrink: 0 !important; }
+    .tab.active { color: #1a1a1a !important; border-bottom: 3px solid #b8860b !important; }
+
+    /* BEST SELLERS */
+    .best-sellers-section { min-height: 200px !important; padding: 40px 16px !important; }
+    .best-sellers-section h2 { font-size: 22px !important; }
+
+    /* CONTACT */
+    .contact-wrapper { grid-template-columns: 1fr !important; gap: 24px !important; }
+
+    /* CART */
+    .cart-sidebar { width: 100% !important; right: -100% !important; }
+    .cart-sidebar.open { right: 0 !important; }
+
+    /* FOOTER */
+    .footer { padding: 36px 16px 0 !important; }
+    .footer-content { grid-template-columns: 1fr !important; gap: 24px !important; text-align: center !important; }
+  }
+  </style>
 </head>
 <body>
 
