@@ -60,9 +60,10 @@ function openProductModal(imgSrc, name, price, badge) {
   const imgWrap = modal.querySelector('.product-modal-img-wrap');
 
   if (window.innerWidth <= 768) {
-    modal.style.cssText = 'display:flex; flex-direction:column; position:fixed; top:50%; left:50%; transform:translate(-50%,-50%); width:92vw; height:auto; max-height:88vh; overflow-y:auto; background:#fff; z-index:1400; box-shadow:0 20px 60px rgba(0,0,0,0.25); border-radius:8px;';
-    imgWrap.style.cssText = 'width:100%; height:260px; flex-shrink:0; overflow:hidden;';
-    info.style.cssText = 'width:100%; padding:16px 18px 24px; display:flex; flex-direction:column; justify-content:flex-start; align-items:flex-start; gap:10px; height:auto;';
+    modal.style.cssText = 'display:flex; flex-direction:column; position:fixed; top:0; left:0; transform:none; width:100vw; height:100vh; max-height:100vh; overflow-y:auto; background:#fff; z-index:1400; border-radius:0;';
+    imgWrap.style.cssText = 'width:100%; height:65vh; flex-shrink:0; overflow:hidden; background:#f7f4f0;';
+    imgWrap.querySelector('img').style.cssText = 'width:100%; height:100%; object-fit:contain; object-position:center;';
+    info.style.cssText = 'width:100%; padding:16px 20px 30px; display:flex; flex-direction:column; justify-content:flex-start; align-items:flex-start; gap:10px; height:auto; flex-shrink:0;';
   } else {
     modal.style.cssText = '';
     imgWrap.style.cssText = '';
@@ -85,7 +86,9 @@ function closeProductModal() {
   modal.classList.remove('active');
   modal.style.cssText = '';
   modal.querySelector('.product-modal-info').style.cssText = '';
-  modal.querySelector('.product-modal-img-wrap').style.cssText = '';
+  const iw = modal.querySelector('.product-modal-img-wrap');
+  iw.style.cssText = '';
+  if (iw.querySelector('img')) iw.querySelector('img').style.cssText = '';
   document.getElementById('productModalOverlay').classList.remove('active');
 }
 
