@@ -54,7 +54,22 @@ function openProductModal(imgSrc, name, price, badge) {
   document.getElementById('productModalPrice').textContent = price;
   document.getElementById('productModalBadge').textContent = badge || '';
   document.getElementById('productModalBadge').style.display = badge ? 'inline-block' : 'none';
-  document.getElementById('productModal').classList.add('active');
+
+  const modal = document.getElementById('productModal');
+  const info = modal.querySelector('.product-modal-info');
+  const imgWrap = modal.querySelector('.product-modal-img-wrap');
+
+  if (window.innerWidth <= 768) {
+    modal.style.cssText = 'display:flex; flex-direction:column; position:fixed; top:50%; left:50%; transform:translate(-50%,-50%); width:92vw; height:auto; max-height:88vh; overflow-y:auto; background:#fff; z-index:1400; box-shadow:0 20px 60px rgba(0,0,0,0.25); border-radius:8px;';
+    imgWrap.style.cssText = 'width:100%; height:260px; flex-shrink:0; overflow:hidden;';
+    info.style.cssText = 'width:100%; padding:16px 18px 24px; display:flex; flex-direction:column; justify-content:flex-start; align-items:flex-start; gap:10px; height:auto;';
+  } else {
+    modal.style.cssText = '';
+    imgWrap.style.cssText = '';
+    info.style.cssText = '';
+  }
+
+  modal.classList.add('active');
   document.getElementById('productModalOverlay').classList.add('active');
 
   const btn = document.getElementById('productModalBtn');
@@ -66,7 +81,11 @@ function openProductModal(imgSrc, name, price, badge) {
 }
 
 function closeProductModal() {
-  document.getElementById('productModal').classList.remove('active');
+  const modal = document.getElementById('productModal');
+  modal.classList.remove('active');
+  modal.style.cssText = '';
+  modal.querySelector('.product-modal-info').style.cssText = '';
+  modal.querySelector('.product-modal-img-wrap').style.cssText = '';
   document.getElementById('productModalOverlay').classList.remove('active');
 }
 
