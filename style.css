@@ -1294,17 +1294,45 @@ body {
   /* --- PRODUCT MODAL --- */
   .product-modal {
     flex-direction: column;
-    width: 94vw;
-    max-height: 88vh;
+    width: 100vw;
+    height: 100dvh;
+    max-height: 100dvh;
+    top: 0; left: 0;
+    transform: none;
+    border-radius: 0;
     overflow-y: auto;
+  }
+  .product-modal.active {
+    transform: none;
   }
   .product-modal-img-wrap {
     width: 100%;
-    height: 280px;
+    height: 55vw;
+    min-height: 260px;
+    max-height: 360px;
+    flex-shrink: 0;
+  }
+  .product-modal-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
   }
   .product-modal-info {
     width: 100%;
-    padding: 20px 18px;
+    padding: 20px 20px 30px;
+    flex: 1;
+  }
+  .product-modal-name { font-size: 20px; }
+  .product-modal-price { font-size: 16px; }
+  .product-modal-btn { padding: 14px; font-size: 11px; }
+  .product-modal-close {
+    top: 12px; right: 14px;
+    font-size: 24px;
+    background: rgba(255,255,255,0.85);
+    border-radius: 50%;
+    width: 36px; height: 36px;
+    display: flex; align-items: center; justify-content: center;
   }
   .product-modal-name { font-size: 20px; }
 
