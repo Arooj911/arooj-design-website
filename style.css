@@ -1225,6 +1225,26 @@ body {
   .section-header h2 { font-size: 20px; letter-spacing: 4px; }
   .section-header p { font-size: 11px; }
 
+  /* --- MOST IN DEMAND --- */
+  .most-in-demand {
+    flex-direction: column !important;
+    padding: 36px 16px !important;
+    gap: 24px !important;
+  }
+  .mid-left {
+    min-width: unset !important;
+    width: 100% !important;
+    text-align: center;
+  }
+  .mid-left h2 { font-size: 28px !important; }
+  .mid-left p { max-width: 100% !important; font-size: 13px; }
+  .mid-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px !important;
+    width: 100% !important;
+  }
+  .mid-img { height: 200px !important; }
+
   /* --- PRODUCT GRIDS: 2 columns --- */
   .products-grid {
     grid-template-columns: repeat(2, 1fr);
